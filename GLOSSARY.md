@@ -27,7 +27,7 @@ A saved snapshot of your changes, with a short mesage that says what you changed
 
 ## Fork
 
-**Plain English:** TODO
+Your own copy of someone else's project on GitHub. You can change your copy freely, then ask the original owners to take your changes with a pull request.
 
 ## Lumens (XLM)
 
