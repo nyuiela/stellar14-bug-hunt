@@ -15,6 +15,15 @@ impl Describe for Payment {
     }
 }
 
+impl Describe for Asset {
+    fn describe(&self) -> String {
+        match self {
+            Asset::Native => "XLM (native)".to_string(),
+            Asset::Credit { code, issuer } => format!("{} issued by {}", code, issuer),
+        }
+    }
+}
+
 /// Describes every item in a slice, one line each.
 pub fn describe_all<T: Describe>(items: &[T]) -> Vec<String> {
     items.iter().map(|item| item.describe()).collect()
