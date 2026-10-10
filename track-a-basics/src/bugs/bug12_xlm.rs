@@ -15,13 +15,14 @@ pub fn xlm_to_stroops(input: &str) -> Result<u64, WalletError> {
     if frac.len() > 7 {
         return Err(invalid());
     }
+    let scale = 10u64.pow((7 - frac.len()) as u32);
     let whole: u64 = whole.parse().map_err(|_| invalid())?;
     let frac: u64 = if frac.is_empty() {
         0
     } else {
         frac.parse().map_err(|_| invalid())?
     };
-    Ok(whole * STROOPS_PER_XLM as u64 + frac)
+    Ok(whole * STROOPS_PER_XLM as u64 + frac * scale)
 }
 
 #[cfg(test)]
