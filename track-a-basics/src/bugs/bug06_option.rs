@@ -11,8 +11,7 @@ pub fn find_wallet<'a>(wallets: &'a [Wallet], address: &str) -> Option<&'a Walle
 
 /// The balance for an address, or 0 if we have never seen that address.
 pub fn balance_of(wallets: &[Wallet], address: &str) -> u64 {
-    let wallet = find_wallet(wallets, address);
-    wallet.balance
+    find_wallet(wallets, address).map_or(0, |w| w.balance)
 }
 
 #[cfg(test)]
