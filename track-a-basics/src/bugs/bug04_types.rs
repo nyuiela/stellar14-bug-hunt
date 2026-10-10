@@ -6,7 +6,7 @@ use crate::types::STROOPS_PER_XLM;
 
 /// Converts stroops to XLM for display. 15_000_000 stroops is 1.5 XLM.
 pub fn stroops_to_xlm(stroops: i64) -> f64 {
-    stroops / STROOPS_PER_XLM
+    stroops as f64 / STROOPS_PER_XLM as f64
 }
 
 #[cfg(test)]
