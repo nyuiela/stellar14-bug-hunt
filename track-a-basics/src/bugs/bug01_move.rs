@@ -7,8 +7,9 @@ use crate::types::Payment;
 /// Moves the payment into the archive and returns a one line description,
 /// for example "250 stroops from GALICE to GBOB".
 pub fn archive_and_describe(payment: Payment, archive: &mut Vec<Payment>) -> String {
+    let line = format!("{} stroops from {} to {}", payment.amount, payment.from, payment.to);
     archive.push(payment);
-    format!("{} stroops from {} to {}", payment.amount, payment.from, payment.to)
+    line
 }
 
 #[cfg(test)]
