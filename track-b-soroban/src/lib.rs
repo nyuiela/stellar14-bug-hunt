@@ -43,6 +43,7 @@ impl TipJar {
 
     /// Moves `amount` from `from` to `to`. Only `from` may approve this.
     pub fn tip(env: Env, from: Address, to: Address, amount: i128) -> Result<(), Error> {
+        from.require_auth();
         if amount <= 0 {
             return Err(Error::InvalidAmount);
         }
