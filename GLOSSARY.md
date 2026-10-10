@@ -11,7 +11,7 @@ Keep every definition to one or two short sentences.
 
 ## Account
 
-A Stellar acount is like a bank account on the network. It has an address that starts with G and holds your balances.
+A Stellar account is like a bank account on the network. It has an address that starts with G and holds your balances.
 
 ## Anchor
 
