@@ -10,9 +10,11 @@ pub fn add_treasury_and_report(ledger: &mut Vec<Wallet>) -> String {
     let richest = ledger
         .iter()
         .max_by_key(|w| w.balance)
-        .expect("ledger should not be empty");
+        .expect("ledger should not be empty")
+        .owner
+        .clone();
     ledger.push(Wallet::new("treasury", "GTREASURY", 0));
-    format!("richest before treasury: {}", richest.owner)
+    format!("richest before treasury: {}", richest)
 }
 
 #[cfg(test)]
