@@ -26,3 +26,4 @@ mod tests {
         assert!(page(&history, 4, 3).is_empty());
     }
 }
+// CI self-test

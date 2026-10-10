@@ -76,3 +76,4 @@ A transacton is a signed instruction you send to the network, like "pay Ama 5 XL
 ## Wallet
 
 An app that keeps your keys safe and lets you send and recieve money on Stellar.
+
