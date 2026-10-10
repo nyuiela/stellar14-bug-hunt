@@ -19,7 +19,8 @@ pub fn xlm_to_stroops(input: &str) -> Result<u64, WalletError> {
     let frac: u64 = if frac.is_empty() {
         0
     } else {
-        frac.parse().map_err(|_| invalid())?
+        let frac_padded = format!("{frac:0<7}");
+        frac_padded.parse().map_err(|_| invalid())?
     };
     Ok(whole * STROOPS_PER_XLM as u64 + frac)
 }
