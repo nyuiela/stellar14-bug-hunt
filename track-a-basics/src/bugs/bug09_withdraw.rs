@@ -7,7 +7,13 @@ use crate::types::{Wallet, WalletError};
 /// Takes `amount` out of the wallet and returns the new balance.
 /// If there is not enough, return `WalletError::InsufficientFunds` and leave the balance alone.
 pub fn withdraw(wallet: &mut Wallet, amount: u64) -> Result<u64, WalletError> {
-    wallet.balance = wallet.balance - amount;
+    if amount > wallet.balance {
+        return Err(WalletError::InsufficientFunds {
+            needed: amount,
+            available: wallet.balance,
+        });
+    }
+    wallet.balance -= amount;
     Ok(wallet.balance)
 }
 
