@@ -11,7 +11,7 @@ pub enum DataKey {
 /// Reads a balance. A user we have never seen has a balance of 0.
 pub fn read_balance(env: &Env, user: &Address) -> i128 {
     env.storage()
-        .instance()
+        .persistent()
         .get(&DataKey::Balance(user.clone()))
         .unwrap_or(0)
 }
