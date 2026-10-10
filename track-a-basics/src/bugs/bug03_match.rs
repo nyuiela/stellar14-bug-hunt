@@ -11,6 +11,7 @@ pub fn status_label(status: TxStatus) -> &'static str {
         TxStatus::Pending => "waiting for the network",
         TxStatus::Success => "confirmed",
         TxStatus::Failed => "rejected",
+        TxStatus::Expired => "expired, please resubmit",
     }
 }
 
