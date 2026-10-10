@@ -35,7 +35,7 @@ The native money of the Stellar network. You need a little bit of it to pay the 
 
 ## Merge
 
-**Plain English:** TODO
+**Plain English:** Combining changes from one branch into another so they become part of the same project.
 
 ## Open source
 
