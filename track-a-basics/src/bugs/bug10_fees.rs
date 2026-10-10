@@ -7,7 +7,7 @@ use std::collections::HashMap;
 /// Looks up the fee for an asset code.
 /// An asset that is not in the table returns `None`, so the caller can refuse it.
 pub fn fee_for(table: &HashMap<String, u64>, code: &str) -> Option<u64> {
-    Some(*table.get(code).unwrap_or(&0))
+    table.get(code).copied()
 }
 
 #[cfg(test)]
