@@ -7,8 +7,10 @@ use crate::types::WalletError;
 /// Parses a whole number of stroops typed by a user, such as " 2500 ".
 /// Anything that is not a whole number returns `WalletError::InvalidAmount` with the trimmed input.
 pub fn parse_stroops(input: &str) -> Result<u64, WalletError> {
-    let value = input.trim().parse::<u64>().unwrap_or_default();
-    Ok(value)
+    let trimmed = input.trim();
+    trimmed
+        .parse::<u64>()
+        .map_err(|_| WalletError::InvalidAmount(trimmed.to_string()))
 }
 
 #[cfg(test)]
