@@ -16,7 +16,7 @@ pub struct Tipped {
 pub fn tipped(env: &Env, from: &Address, to: &Address, amount: i128) {
     Tipped {
         from: from.clone(),
-        to: from.clone(),
+        to: to.clone(),
         amount,
     }
     .publish(env);
