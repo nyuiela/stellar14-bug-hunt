@@ -7,12 +7,14 @@ use crate::types::Wallet;
 /// Finds the wallet with the highest balance, adds an empty treasury wallet
 /// to the ledger, and returns "richest before treasury: <owner>".
 pub fn add_treasury_and_report(ledger: &mut Vec<Wallet>) -> String {
-    let richest = ledger
+    let richest_owner = ledger
         .iter()
         .max_by_key(|w| w.balance)
-        .expect("ledger should not be empty");
+        .expect("ledger should not be empty")
+        .owner
+        .clone();
     ledger.push(Wallet::new("treasury", "GTREASURY", 0));
-    format!("richest before treasury: {}", richest.owner)
+    format!("richest before treasury: {}", richest_owner)
 }
 
 #[cfg(test)]
