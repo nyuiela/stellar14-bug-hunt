@@ -19,7 +19,7 @@ A business that connects Stellar to the normal money world, so you can turn loca
 
 ## Branch
 
-**Plain English:** TODO
+**Plain English:** A separate line of work where you can make changes without affecting the main version of a project until you are ready to combine them.
 
 ## Commit
 
