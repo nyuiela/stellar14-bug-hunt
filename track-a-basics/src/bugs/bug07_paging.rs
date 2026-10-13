@@ -4,7 +4,7 @@
 
 /// Returns one page of items. Pages start at 0, so page 0 is the first `page_size` items.
 pub fn page<T: Clone>(items: &[T], page: usize, page_size: usize) -> Vec<T> {
-    let start = page * page_size + 1;
+    let start = page * page_size;
     items.iter().skip(start).take(page_size).cloned().collect()
 }
 
